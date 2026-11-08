@@ -1,24 +1,37 @@
-#ifndef SIMULATOREXCEPTION_H
-#define SIMULATOREXCEPTION_H
+#ifndef SCREEN_H
+#define SCREEN_H
 
-#include <exception>
+#include <vector>
 #include <string>
+#include <iostream>
 
 using namespace std;
 
-class SimulatorException : public exception {
+class Screen {
 private:
-    string message;
+    vector<string> output;
+    bool echo;
 
 public:
-    SimulatorException(const string& message) : message(message) {}
+    Screen() : echo(true) {}
 
-    const char* what() const noexcept override {
-        return message.c_str();
+    void print(const string& value) {
+        output.push_back(value);
+        if (echo) {
+            cout << value << endl;
+        }
     }
 
-    string getMessage() const {
-        return message;
+    vector<string> getOutput() const {
+        return output;
+    }
+
+    void setEcho(bool enable) {
+        echo = enable;
+    }
+
+    bool getEcho() const {
+        return echo;
     }
 };
 
