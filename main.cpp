@@ -1,37 +1,36 @@
-#ifndef SCREEN_H
-#define SCREEN_H
+#ifndef MACHINEDISPLAY_H
+#define MACHINEDISPLAY_H
 
-#include <vector>
 #include <string>
-#include <iostream>
+#include "Memory.h"
+#include "CPU.h"
+#include "Screen.h"
 
 using namespace std;
 
-class Screen {
-private:
-    vector<string> output;
-    bool echo;
-
+class MachineDisplay {
 public:
-    Screen() : echo(true) {}
+    MachineDisplay() = default;
 
-    void print(const string& value) {
-        output.push_back(value);
-        if (echo) {
-            cout << value << endl;
-        }
+    void showMenu() {
     }
 
-    vector<string> getOutput() const {
-        return output;
+    void showMemoryMatrix(const Memory& memory) {
     }
 
-    void setEcho(bool enable) {
-        echo = enable;
+    void showCPUState(const CPU& cpu) {
     }
 
-    bool getEcho() const {
-        return echo;
+    void showScreen(const Screen& screen) {
+    }
+
+    void showMachineState(const CPU& cpu, const Memory& memory, const Screen& screen) {
+    }
+
+    void showMessage(const string& message) {
+    }
+
+    void showError(const string& message) {
     }
 };
 
