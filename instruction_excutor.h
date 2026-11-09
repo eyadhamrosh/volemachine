@@ -7,14 +7,7 @@
 #include "ExecutionOutcome.h"
 using namespace std;
 #ifndef INSTRUCTION_EXECUTOR_H
-#define INSTRUCTION_EXECUTOR_H
-
-#include "Instruction.h"
-#include "RegisterFile.h"
-#include "ProgramCounter.h"
-#include "Memory.h"
-#include "Screen.h"
-#include "ExecutionOutcome.h"
+#define INSTRUCTION_EXECUTOR_
 
 class InstructionExecutor {
 private:
